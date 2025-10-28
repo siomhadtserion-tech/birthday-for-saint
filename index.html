@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To My Dearest Lord Saint Zoe 💌</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Great+Vibes&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #ffd6ec 0%, #d6eaff 100%);
+      color: #333;
+      overflow-x: hidden;
+      text-align: center;
+    }
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      transition: opacity 1s ease;
+    }
+    .hidden { display: none; }
+    button {
+      background-color: #ffb6d9;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover { background-color: #ff99cc; }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5em;
+      color: #ff6fa8;
+    }
+    .letter {
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: left;
+      line-height: 1.7;
+    }
+    .coupons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .coupon {
+      background: white;
+      border-radius: 15px;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .coupon:hover { transform: scale(1.05); }
+    .crossword {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 2rem;
+    }
+    .clue {
+      margin: 5px 0;
+      font-weight: 600;
+    }
+    input {
+      margin-top: 5px;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    footer {
+      padding: 2rem;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <!-- 🎂 Start Page -->
+  <section id="start">
+    <h1>🎀 Happy Birthday, My Dearest Lord Saint Zoe 🎀</h1>
+    <p>Tap below to open your birthday surprise 💌</p>
+    <button onclick="startExperience()">Open Surprise</button>
+  </section>
+
+  <!-- 💌 Letter Section -->
+  <section id="letter" class="hidden">
+    <h1>To My Dearest Lord Saint Zoe 💖</h1>
+    <div class="letter">
+      <p>Thank you for being born in the same lifetime as me. Every day since I met you feels like a quiet miracle — that somehow, across oceans and time zones, our hearts found each other. 🌏</p>
+      <p>Even when we’re apart, I still feel you in small moments — the morning light, the late-night talks, the way I smile at my screen like an idiot because of your messages. You’ve turned distance into something beautiful, something worth crossing every day.</p>
+      <p>You’ve taught me that love can exist between laughter and longing, between screens and silence. And I wouldn’t trade this for anything. You are my comfort, my chaos, my calm.</p>
+      <p>Happy Birthday, my love. I can’t wait for the day I get to say all this while holding you for real. Until then, here’s my little piece of the universe — made just for you.</p>
+      <p style="text-align:right;">— your favorite cat girl, Jane 🐾</p>
+    </div>
+  </section>
+
+  <!-- 🎟️ Coupons Section -->
+  <section id="coupons" class="hidden">
+    <h1>🎁 Birthday Coupons 🎁</h1>
+    <div class="coupons">
+      <div class="coupon"><h3>November 2025</h3><p>🎬 Free Virtual Movie Night (Your pick!)</p></div>
+      <div class="coupon"><h3>December 2025</h3><p>🍰 Your Pick of Dessert</p></div>
+      <div class="coupon"><h3>January 2026</h3><p>🍔 Your Pick of Food During Movie Night</p></div>
+      <div class="coupon"><h3>February 2026</h3><p>🤗 Free Virtual Hug Coupon</p></div>
+      <div class="coupon"><h3>March 2026</h3><p>💌 One Long Voice Call Session</p></div>
+    </div>
+  </section>
+
+  <!-- 🧩 Crossword Puzzle -->
+  <section id="crossword" class="hidden">
+    <h1>🧩 Our Crossword Puzzle 🧩</h1>
+    <div class="crossword">
+      <div class="clue">1️⃣ What's our theme song? (hint: yellow)</div>
+      <input type="text" id="q1" placeholder="Answer">
+      <div class="clue">2️⃣ Your favorite cake flavor</div>
+      <input type="text" id="q2" placeholder="Answer">
+      <div class="clue">3️⃣ Which fast food did we eat during our first meet-up?</div>
+      <input type="text" id="q3" placeholder="Answer">
+      <div class="clue">4️⃣ What inn did we go to during first meet-up?</div>
+      <input type="text" id="q4" placeholder="Answer">
+      <div class="clue">5️⃣ Breed of your fave animal</div>
+      <input type="text" id="q5" placeholder="Answer">
+      <div class="clue">6️⃣ What am I craving right now?</div>
+      <input type="text" id="q6" placeholder="Answer">
+      <br><button onclick="checkAnswers()">Check Answers</button>
+      <p id="result"></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Made with 💗 by your favorite cat girl, Jane — October 29, 2025</p>
+  </footer>
+
+  <audio id="bgm" loop autoplay>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_89a4eeb26c.mp3?filename=nocturne-no2-op9-23136.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const start = document.getElementById('start');
+    const letter = document.getElementById('letter');
+    const coupons = document.getElementById('coupons');
+    const crossword = document.getElementById('crossword');
+
+    function startExperience() {
+      start.classList.add('hidden');
+      letter.classList.remove('hidden');
+      setTimeout(() => coupons.classList.remove('hidden'), 6000);
+      setTimeout(() => crossword.classList.remove('hidden'), 12000);
+      document.getElementById('bgm').play();
+    }
+
+    function checkAnswers() {
+      const answers = {
+        q1: "yellow",
+        q2: "chocolate",
+        q3: "chowking",
+        q4: "magnet inn",
+        q5: "shiba inu",
+        q6: "you"
+      };
+      let score = 0;
+      for (const key in answers) {
+        const input = document.getElementById(key).value.trim().toLowerCase();
+        if (input === answers[key]) score++;
+      }
+      const result = document.getElementById('result');
+      if (score === 6) {
+        result.innerHTML = "🎉 Perfect! You remember everything, my love 💕";
+      } else {
+        result.innerHTML = `You got ${score}/6 correct 💗`;
+      }
+    }
+  </script>
+</body>
+</html>
