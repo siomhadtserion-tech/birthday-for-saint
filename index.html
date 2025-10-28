@@ -4,110 +4,96 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>To My Dearest Lord Saint Zoe 💌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Great+Vibes&display=swap');
     body {
       margin: 0;
-      font-family: 'Quicksand', sans-serif;
+      font-family: 'Baloo 2', cursive;
       background: linear-gradient(135deg, #ffd6ec 0%, #d6eaff 100%);
       color: #333;
       overflow-x: hidden;
       text-align: center;
     }
-    section {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      transition: opacity 1s ease;
-    }
-    .hidden { display: none; }
+    h1 { font-family: 'Great Vibes', cursive; color: #ff6fa8; font-size: 2.6em; margin-bottom: .5em; }
     button {
-      background-color: #ffb6d9;
-      border: none;
-      color: white;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background 0.3s ease;
+      background: #ffb6d9; border: none; color: #fff;
+      padding: 15px 35px; border-radius: 30px;
+      font-size: 1.2em; cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,.15);
+      transition: all .3s;
     }
-    button:hover { background-color: #ff99cc; }
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.5em;
-      color: #ff6fa8;
+    button:hover { background: #ff99cc; transform: scale(1.05); }
+    section {
+      min-height: 100vh; display: flex;
+      flex-direction: column; justify-content: center; align-items: center;
+      padding: 2rem; position: relative;
     }
+    .hidden { display:none; }
     .letter {
-      max-width: 600px;
-      background: rgba(255, 255, 255, 0.7);
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      text-align: left;
-      line-height: 1.7;
+      max-width: 600px; background: rgba(255,255,255,.75);
+      border-radius: 20px; padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,.1);
+      text-align: left; line-height: 1.7;
     }
     .coupons {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:1rem; margin-top:1.5rem; max-width:800px;
     }
     .coupon {
-      background: white;
-      border-radius: 15px;
-      padding: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+      background:white; border-radius:20px; padding:1rem;
+      box-shadow:0 4px 10px rgba(0,0,0,.1);
+      transition:transform .3s, box-shadow .3s;
     }
-    .coupon:hover { transform: scale(1.05); }
-    .crossword {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 2rem;
+    .coupon:hover {
+      transform:scale(1.05);
+      box-shadow:0 6px 14px rgba(0,0,0,.15);
     }
-    .clue {
-      margin: 5px 0;
-      font-weight: 600;
+    .crossword input {
+      margin:4px; padding:6px 10px;
+      border-radius:10px; border:1px solid #ccc;
+      text-align:center; font-family:'Baloo 2',cursive;
     }
-    input {
-      margin-top: 5px;
-      padding: 5px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      text-align: center;
+    footer { padding:2rem; font-size:.9em; opacity:.8; }
+    /* floating emoji bubbles */
+    .float {
+      position: absolute; font-size: 2rem; opacity: 0.6;
+      animation: float 15s linear infinite;
     }
-    footer {
-      padding: 2rem;
-      font-size: 0.9em;
-      opacity: 0.8;
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(0.8); opacity: 0.8; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <!-- 🎂 Start Page -->
+  <!-- floating emojis -->
+  <div class="float" style="left:10%; animation-delay:0s;">🧸</div>
+  <div class="float" style="left:30%; animation-delay:3s;">💗</div>
+  <div class="float" style="left:50%; animation-delay:6s;">🫧</div>
+  <div class="float" style="left:70%; animation-delay:9s;">🧸</div>
+  <div class="float" style="left:90%; animation-delay:12s;">💞</div>
+
+  <!-- start -->
   <section id="start">
     <h1>🎀 Happy Birthday, My Dearest Lord Saint Zoe 🎀</h1>
     <p>Tap below to open your birthday surprise 💌</p>
     <button onclick="startExperience()">Open Surprise</button>
   </section>
 
-  <!-- 💌 Letter Section -->
+  <!-- letter -->
   <section id="letter" class="hidden">
     <h1>To My Dearest Lord Saint Zoe 💖</h1>
     <div class="letter">
-      <p>Thank you for being born in the same lifetime as me. Every day since I met you feels like a quiet miracle — that somehow, across oceans and time zones, our hearts found each other. 🌏</p>
-      <p>Even when we’re apart, I still feel you in small moments — the morning light, the late-night talks, the way I smile at my screen like an idiot because of your messages. You’ve turned distance into something beautiful, something worth crossing every day.</p>
-      <p>You’ve taught me that love can exist between laughter and longing, between screens and silence. And I wouldn’t trade this for anything. You are my comfort, my chaos, my calm.</p>
-      <p>Happy Birthday, my love. I can’t wait for the day I get to say all this while holding you for real. Until then, here’s my little piece of the universe — made just for you.</p>
+      <p>Thank you for being born in the same lifetime as me. Every day with you feels like a quiet blessing — that even across oceans and time zones, our hearts found their way home.</p>
+      <p>You’ve shown me what generosity and strength look like. You work so hard, provide so much for your family and for me, yet still give kindness freely to everyone around you. You inspire me every single day.</p>
+      <p>I’m so proud of the man you are — thoughtful, driven, and full of love. I hope you receive everything you truly deserve — a life filled with good health, comfort, and an abundance of happiness that always finds its way back to you.</p>
+      <p>Happy Birthday my love. Even in distance, you make my world feel close and warm. I love you endlessly.</p>
       <p style="text-align:right;">— your favorite cat girl, Jane 🐾</p>
     </div>
   </section>
 
-  <!-- 🎟️ Coupons Section -->
+  <!-- coupons -->
   <section id="coupons" class="hidden">
     <h1>🎁 Birthday Coupons 🎁</h1>
     <div class="coupons">
@@ -119,69 +105,78 @@
     </div>
   </section>
 
-  <!-- 🧩 Crossword Puzzle -->
+  <!-- crossword -->
   <section id="crossword" class="hidden">
     <h1>🧩 Our Crossword Puzzle 🧩</h1>
     <div class="crossword">
-      <div class="clue">1️⃣ What's our theme song? (hint: yellow)</div>
-      <input type="text" id="q1" placeholder="Answer">
-      <div class="clue">2️⃣ Your favorite cake flavor</div>
-      <input type="text" id="q2" placeholder="Answer">
-      <div class="clue">3️⃣ Which fast food did we eat during our first meet-up?</div>
-      <input type="text" id="q3" placeholder="Answer">
-      <div class="clue">4️⃣ What inn did we go to during first meet-up?</div>
-      <input type="text" id="q4" placeholder="Answer">
-      <div class="clue">5️⃣ Breed of your fave animal</div>
-      <input type="text" id="q5" placeholder="Answer">
-      <div class="clue">6️⃣ What am I craving right now?</div>
-      <input type="text" id="q6" placeholder="Answer">
-      <br><button onclick="checkAnswers()">Check Answers</button>
+      <div>1️⃣ What's our theme song? (hint: yellow)</div>
+      <input id="q1" placeholder="Answer">
+      <div>2️⃣ Your favorite cake flavor</div>
+      <input id="q2" placeholder="Answer">
+      <div>3️⃣ Which fast food did we eat during first meet-up?</div>
+      <input id="q3" placeholder="Answer">
+      <div>4️⃣ What inn did we go to during first meet-up?</div>
+      <input id="q4" placeholder="Answer">
+      <div>5️⃣ Breed of your fave animal</div>
+      <input id="q5" placeholder="Answer">
+      <div>6️⃣ What am I craving right now?</div>
+      <input id="q6" placeholder="Answer"><br>
+      <button onclick="checkAnswers()">Check Answers</button>
       <p id="result"></p>
     </div>
   </section>
 
   <footer>
-    <p>Made with 💗 by your favorite cat girl, Jane — October 29, 2025</p>
+    Made with 💗 by your favorite cat girl Jane — October 29, 2025
   </footer>
 
-  <audio id="bgm" loop autoplay>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_89a4eeb26c.mp3?filename=nocturne-no2-op9-23136.mp3" type="audio/mpeg">
-  </audio>
+  <!-- YouTube background -->
+  <iframe id="ytPlayer"
+      src="https://www.youtube.com/embed/9E6b3swbnWg?autoplay=1&loop=1&playlist=9E6b3swbnWg&controls=0&mute=0"
+      frameborder="0" allow="autoplay; encrypted-media" style="width:0;height:0;border:0;"></iframe>
 
   <script>
     const start = document.getElementById('start');
     const letter = document.getElementById('letter');
     const coupons = document.getElementById('coupons');
     const crossword = document.getElementById('crossword');
+    const total = 6;
 
-    function startExperience() {
+    function startExperience(){
       start.classList.add('hidden');
       letter.classList.remove('hidden');
-      setTimeout(() => coupons.classList.remove('hidden'), 6000);
-      setTimeout(() => crossword.classList.remove('hidden'), 12000);
-      document.getElementById('bgm').play();
+      setTimeout(()=>coupons.classList.remove('hidden'),6000);
+      setTimeout(()=>crossword.classList.remove('hidden'),12000);
     }
 
-    function checkAnswers() {
-      const answers = {
-        q1: "yellow",
-        q2: "chocolate",
-        q3: "chowking",
-        q4: "magnet inn",
-        q5: "shiba inu",
-        q6: "you"
-      };
-      let score = 0;
-      for (const key in answers) {
-        const input = document.getElementById(key).value.trim().toLowerCase();
-        if (input === answers[key]) score++;
+    function checkAnswers(){
+      const a={q1:"yellow",q2:"chocolate",q3:"chowking",q4:"magnet inn",q5:"shiba inu",q6:"you"};
+      let score=0;
+      for(const k in a){
+        const v=document.getElementById(k).value.trim().toLowerCase();
+        if(v===a[k]) score++;
       }
-      const result = document.getElementById('result');
-      if (score === 6) {
-        result.innerHTML = "🎉 Perfect! You remember everything, my love 💕";
+      const r=document.getElementById('result');
+      if(score===total){
+        r.innerHTML="🎉 Perfect! You remember everything my love 💕";
+        launchConfetti();
       } else {
-        result.innerHTML = `You got ${score}/6 correct 💗`;
+        r.innerHTML=`You got ${score}/${total} correct 💗`;
       }
+    }
+
+    function launchConfetti(){
+      const duration=2*1000, end=Date.now()+duration;
+      const defaults={startVelocity:30,spread:360,ticks:60,zIndex:2000};
+      const interval=setInterval(()=>{
+        const timeLeft=end-Date.now();
+        if(timeLeft<=0)return clearInterval(interval);
+        const count=50*(timeLeft/duration);
+        confetti(Object.assign({},defaults,{
+          particleCount:count,
+          origin:{x:Math.random(),y:Math.random()-0.2}
+        }));
+      },250);
     }
   </script>
 </body>
